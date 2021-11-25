@@ -1,0 +1,724 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>Room Acoustics - Auralization</title>
+
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+	<style>
+		.reveal section .title {
+			color: #bfbfbf;
+		}
+
+		.reveal section .subtitle {
+			text-transform: capitalize;
+			color: white;
+			font-size: 130%;
+			margin-bottom: 5%;
+		}
+
+		.reveal section .subsubtitle{
+			font-size: 110%;
+		}
+		.reveal section small {
+			font-size: 50%;
+		}
+
+		)
+
+		/* 1. Style header/footer <div> so they are positioned as desired. */
+		#header-left {
+			position: absolute;
+			top: 0%;
+			left: 0%;
+		}
+
+		#header-right {
+			position: absolute;
+			top: 0%;
+			right: 0%;
+		}
+
+		#footer-left {
+			position: absolute;
+			bottom: 2%;
+			left: 2%;
+		}
+
+		.scrollable {
+		    overflow-y: auto  !important;
+		    overflow-x: hidden !important;
+		    height: 700px;
+		}
+
+		.multiCol {
+		    display: table;
+		    table-layout: fixed; /* don't fudge depending on content*/
+		    width: 100%;
+		    text-align: left; /* matter of taste, makes imho sense*/
+		    .col {
+		        display: table-cell;
+		        vertical-align: top;
+		        width: 50%;
+		        padding: 2% 0 2% 3%; /* some vertical, and between columns*/
+		        &:first-of-type { padding-left: 0; } /* there's nothing before col1*/
+		    }
+		}
+
+		.twocolumn {
+		   display: grid;
+		   grid-template-columns: 1fr 1fr;
+		   grid-gap: 10px;
+		   text-align: left;
+		}
+
+	</style>
+
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background="assets/What-Are-Violin-Strings-Made-Of.png">
+				<h3> Acoustics - String Instruments</h3>
+				<h4> sara.martin@ntnu.no</h4>
+
+				<aside class="notes">
+				</aside>
+			</section>
+
+
+			<section>
+				<h4><span style="color:#3a84b8;">Sound Radiation </span> of musical Instruments</h4>
+				The directivity pattern of a musical instrument might:
+				<br>
+				<br>
+				<ul>
+					<li class="fragment"> have <span style="color:#3a84b8;">one or several</span> strong directions </li>
+					<li class="fragment"> depend <span style="color:#3a84b8;">FREQUENCY</span> of sound </li>
+					<li class="fragment"> be <span style="color:#3a84b8;">OMNIDIRECTIONAL</span> for Low Frequencies</li><br>
+				</ul>
+
+
+
+
+				<aside class="notes">
+				The sound radiation from a Musical Instrument is MUCH MORE COMPLICATED than from a LOUDSPEAKER because the Musical instruments have more COMPLICATED DIRECTIVITY FUNCTIONS. <br>
+				<br>
+				As for loudspeakers, directivity INCREASES with FREQUENCY, and the RADIATION MIGHT be OMNIDIRECTIONAL for LOW freq. (But not all instruemnts have OMNI. for low freq! because the instruments MIGHT act as a DIPOLE, if parts of the vibrating surface is moving OUTWARDS at the same time as other parts move INWARDS.<br>
+				<br>
+
+
+				</aside>
+			</section>
+
+
+
+
+
+			<section>
+
+				<p class="subtitle">Room Acoustics:</p>
+
+				$$L_p = L_W + 10log(\frac{Q}{4\pi r^2} + \frac{4}{A})$$
+
+				<div align="left">
+					$L_p =$ sound pressure level, in dB<br>
+					$L_w =$ sound power level, in dB<br>
+					<span style="color:#3a84b8;">$Q =$ directivity factor</span> (DF) of the sound source<br>
+					$r =$ distance from the sound source, in m<br>
+					$A =$ Total absorpotion area, in $m^2$<br>
+				</div>
+
+
+				<aside class="notes">
+					IN Room Acoustics lectures you certainly saw this formula which is widely used to calculate the Sound PRESSURE level from the sound POWER level. (Example of temperature and Heater!)<br>
+					So, in this formula we can observe that the DIRECTIVITY factor DIRECTLY affects the BALANCE between the DIRECT sound and the REVERBERATION. <br>
+					The relationship between direct sound and reverberation affects our PERCEPTION of CLARITY, how EASY for our ears is to hear DETAILS of music (Ex: church --> LONG REV.--> SLOW MUSIC). <br>
+					Then, the music instruments' directivity affect HOW HIGH CLARITY the listener can EXPERIENCE.
+					<ul>
+						<li> Instru. with HIGH DIRECTIVITY can REACH OUT STRONG direct sound </li>
+						<li> Instrument CLOSE to a WALL with STRONG directivity migh cause EARLY REFLECTION and an effect of CHANGE of the DIRECTION fo the sound SOURCE!</li>
+						</ul>
+
+				</aside>
+			</section>
+
+
+			<section>
+
+
+				<h4>String Instruments: <span style="color:#3a84b8;">GENERATION Of Sound</span></h4>
+
+
+				<ul>
+					<li> <span style="color:#3a84b8;">Vibrations</span> generated in tensioned strings  </li>
+					<li> Vibrations get a <span style="color:#3a84b8;">very strong amplitude </span> for harmonically distributed frequencies
+					</li>
+				</ul>
+
+<img class="stretch" src="assets/ViolinStringMotion.gif" />
+
+
+				</aside>
+
+			</section>
+
+			<section>
+
+
+				<h4>String Instruments: <span style="color:#3a84b8;">GENERATION Of Sound</span></h4>
+
+				<img class="stretch" src="assets/ViolinStringMotion.png" />
+<br>
+				A vibrating string RADIATES HARDLY any sound:
+				<ul>
+					<li> the string is  <span style="color:#3a84b8;">very thin</span> </li>
+					<li> the string acts as <span style="color:#3a84b8;">a dipole </span> </li>
+				</ul>
+
+				<aside class="notes">
+-					When the string is moving in one direction, a momentary OVERPRESSURE is generated on one side, at the same time as an UNDERPRESSURE is generated on the other side. <br>
+					- The distance bettween the 2 sides is SO SHORT, there will be a VERY EFFICIENT so-called ACOUSTICAL SHORT-CIRCUITING (demo of loudspeaker where the ENCLOSURE is REMOVED while MUSIC playing).<br><br>
+
+					An ELECTRIC GUITAR is very SILENT without any AMPLIFIER and LOUDSPEAKER!
+					<br><br>
+					So, the vibration needs to be TRANSFERED to a PART of the musical instrument that RADIATES the sound much better than the string.
+
+				</aside>
+			</section>
+
+
+<section>
+	<h4>String Instruments: <span style="color:#3a84b8;">GENERATION Of Sound</span></h4>
+	<img class="stretch" src="assets/StringModesSystem.png" />
+	<aside class="notes">
+On one end, the string is TIGHTED ON to a CLAMP that is  to a table.<br><br>
+On the other end, it is attached to a MIDRANGE DRIVER --> The idea is that we are goin to use it to INJECT some ENERGY to the string, we are going to MOVE IT at different FREQUENCIES and SEE what happens. <br><br>
+How the string is RESPONDING if we move it to certain frequencies. We are going to see
+	</aside>
+	</section>
+
+	<section>
+		<h4>String Instruments: <span style="color:#3a84b8;">GENERATION Of Sound</span></h4>
+		<img class="stretch" src="assets/MIDRANGE-DRIVER.png" />
+		<aside class="notes">
+	- CLOSE UP of a Midrange Zoom <br><br>
+	- We GLUE some post, a SCREW  onto the DUST CUP of the MIDRANGE and GLUE some wood STICKS to keep it UPRIGHT and so the string can be attached.<br><br>
+
+	What we are going to do is to MOVE the loudspeaker UP and DOWN so that the we mode the STRING UP and DOWN.<br>
+	We are going to KEEP to same AMPLITUDE of movement but we are going to CHANGE the FREQUENCY to SEE WHAT HAPPENS<br>
+
+		</aside>
+		</section>
+
+
+<section data-background-video="assets/String_MODES2.mp4" data-background-color="#000000">
+
+	<aside class="notes">
+		So any OBJECT HAS A NATURAL FREQUENCIES that VIBRATES with HIGHER AMPLITUDES and these FREQ: are CALLED RESONANCES, or we talked about MODES which is the MSHAPE and the corresponding AMPLITUDE.
+
+	</aside>
+	</section>
+
+
+	<section>
+		<h4>String Instruments: <span style="color:#3a84b8;">GENERATION Of Sound</span></h4>
+Resonance frequencies:
+
+$$f_n = n\cdot f_1, \qquad f_1 = \displaystyle{\frac{Wave.Vel.}{2L}=\frac{\sqrt{\frac{T}{m/L}}}{2L}}$$
+where $f_1$ = fundamental Frequency [Hz]<br>
+$T$ = tension of the string [N]<br>
+$L$ = length of the string [m]<br>
+$m$ = mass of the string [kg]
+
+		<aside class="notes">
+SO, we see that the resonance frequencies are PROPERTIES of the Object.<br>
+More TENSION, HIGHER Fundamental<br>
+MORE MASS, LOWER Fundamental <br>
+		</aside>
+		</section>
+
+
+
+
+<section >
+<h4>Vibrations of a <span style="color:#3a84b8;">plucked string</span></h4>
+
+<img class="stretch" src="assets/StringModesMidpoint.png" /><br>
+String plucked at its <span style="color:#3a84b8;">midpoint</span>
+<aside class="notes">
+- Resulting vibration  is a combination of the normal moedls of vibraions or resonances.<br>
+<br>
+- Shapes + Amplitudes + Phase --> Spectrum<br>
+<br>
+- Fundamental + ONLY ODD-NUMBERED HARMONICS<br>
+<br>
+- Positive and negative PHASE to give the mAX in its CENTER!<br>
+<br>
+- Right after pucling, the modes get out of phase and it is more complicated to vie the motion of the string as a combination although it is still that. It is rather EASIER to see the motion as 2 PULSES traveling in OPPOSITE DIRECTION. TIME ANALYSIS
+
+</aside>
+</section>
+
+
+<section >
+<h4>Vibrations of a <span style="color:#3a84b8;"> plucked string</span></h4>
+
+<img class="stretch" src="assets/StringModesOneFifth.png" /><br>
+String plucked at <span style="color:#3a84b8;">1/5 of its length</span> from the bridge
+
+<aside class="notes">
+- Modes are DIFFERENT<br>
+<br>
+- FIFTH harmonic is MISSING<br>
+<br>
+- a BEND is RACING back and borth  within a PARALLELOGRAM BOUNDARY.<br>
+<br>
+- D'Alembert's solution.
+</aside>
+</section>
+
+
+<section >
+<h4>Vibrations of a<span style="color:#3a84b8;"> Bowed string</span></h4>
+ <span style="color:#3a84b8;">Stick-slip action</span> of bow on string:
+<img class="stretch" src="assets/Bow.gif" />
+
+<aside class="notes">
+The string appears ot vibrate back and forth smoothly between 2 CURVED BOUNDARIES, like a FREE string in its FUNDAMENTAL MODE.<br><br>
+But, the string is actually NEARLY STRAIGHT with a SHARP BEND at ONE POINT --> it resembles the initial shape of the PLUCKED string!<br><br>
+
+The string is CARRIED ALONG by the bow, then DETACHES and MOVES rapidly back until it is caught by the BOW again.
+
+
+</aside>
+</section>
+
+
+
+
+
+<section >
+<h4>Vibrations of a<span style="color:#3a84b8;"> Bowed string</span></h4>
+
+<img class="stretch" src="assets/StringBowMov.png" />
+
+
+<aside class="notes">
+- CONSTANT SPEED of the BOW! <br><br>
+
+- b) the BEND has reached the BRIDGE and will REFLECT BACK BOWN the string until (f) where it reaches the NUT<br><br>
+- The stick and slip of the string against the moving bow are DETERMINED by the FORCE OF FRICTION between the HORSEHAIR and the STRING. <br><br>
+- Slipping begins when the BEND arrives from the NUT and ends when it arrives from the BIRDGE.<br>
+- The time required for 1 ROUND TRIP depends only on the string LENGTH and the WAVE VELOCITY (depends on TENSION and MASS) and the vibration FREQ. remains the same.<br><br>
+- Note that here there is ONE BEND and for the PLUCKED STRING there were 2!<br><br>
+- The envelop is 2 parabolas with AMPLITUDE proportional to the BOW VELOCITY. It also INCREASES when the string is BOWED NEAR to an end.
+
+</aside>
+</section>
+
+
+<section >
+<h4>Vibrations of a<span style="color:#3a84b8;"> Bowed string</span></h4>
+ <span style="color:#3a84b8;">Driving force</span> at the bridge:
+<img class="stretch" src="assets/BRIDGEForce.png" />
+
+<aside class="notes">
+- SAWTOOTHLIKE motion of the CONTACT POINT! - this is the EXCITATION WAVEFORM for the string to VIBRATE!<br>
+- This Force has different HARMONICS decreasing in amplitude by 1/n.
+- So, the EXCITATION force is not constant as in the VIDEO of the string modes but it rathers excites different frequencies at the same time.
+
+</aside>
+</section>
+
+
+
+			<section >
+
+				<h4>String Instruments: <span style="color:#3a84b8;">RADIATION Of Sound</span></h4>
+			<div class="twocolumn">
+				        <div>
+									<ul>
+
+										<li>Vibrations (strings)$$\downarrow$$ Forces (bridge) $$\downarrow$$ Vibrations (body)<br></li>
+										<li>	<span style="color:#3a84b8;">Amplification:</span>
+											<ul> <li>Wooden plates</li>
+										<li> Inside the box</li>
+									</ul></li>
+									</ul>
+			</div>
+        <div>
+<img class="stretch" width="90%" src="assets/Parts-of-a-Violin.jpeg" />
+</div>
+</div>
+
+<aside class="notes">
+So, here is what happens. On the right we can see the different PARTs of the violin: the STRINGS are tightened ACCROSS the bridge which is ATTACHED PERPENDICULARLY to the body of the violin. Vibrations will then GENERATE forces on the bridge and the bridge TRANSFERS the vibrations to the BODY.<br>
+
+Now, there are 2 MECHANISM to AMPLIFY the sound:<br>
+<ul>
+
+	<li>the WOODEN PLATES of the body</li>
+	<li> INSIDE the box</li>
+	</ul>
+1- the WOODEN plates have a SERIES of RESONANCES (which we will see later on) which are some VIRBATIONS PATTERNS and STRONG AMPLITUDES at certain FREQUENCIES. Although it is not JUST at those frequencies but on a RANGE around those.<br>
+So, for the CONSTRUCTION of the luthiers this is a very important fact that those resonances alctually COVER a LARGE part of the IMPORTANT FREQUENCY RANGE of the musical instrument. <br>
+
+The second way that amplifies the sound is VIA:<br>
+2- the INSIDE the box it can be considered as a SMALL ROOM where there is also some RESONANCE for OTHER Frequencies and RADIATES THROUGH the f-HOLES (in PHASE or in OPPOSITE PHASE!)
+<br>
+
+So now, let's just see an example of sound AMPLIFICATION through a body. Here is the tunig fork attached to a amplification box. You have surely tried it before, but the tuning fork does not sound if one DOES NOT TRANSMIT the virbations of the fork SOMEWHERE!
+
+				</aside>
+			</section>
+
+
+
+
+
+<section data-background-video="assets/Tuning-Forks.mp4" data-background-color="#000000">
+
+	<aside class="notes">
+The tunning fork is actually radiating a bit more than a string becuase it has more surface but at the same it is acting as a dipole source, which always gives VERY WEAK RADIATION. <br>
+<br>
+By TRASNFERING sound radiation to the BOX, which has been CONSTRUCTED to AMPLIFLY the Freq. around the FIRST RESONANCE FREQ. of the tuning fork, sound it is radiated with much more power. As soon as the fork is DAMPED, the vibration STOPS and then there is no more sound. <br>
+<br>
+Another insteresting thing is to SEE how EQUALY tuning forks INTERAC to each other and how the RESONANCE gets TRANSMITTED. This is SYMPATHETIC resonance! <br>
+<br>
+Also, when the Frequ. is changed, the other TUNING FORK is no longer RESONANTING because the freq. Excited is not its RESONANCE fequen. so there is NO COUPLING. <br>
+<br>
+Finally, when the 2 tuning forks are EXCITED, both boxes radiate their own PITCH and the INTERFERENCE of those 2 pitches creat a BEAT usually with a frequency the difference of the 2 pitches.
+<br><br>
+Interesting to note is that the RESONANT FREQ of the tuning fork have NOT a HARMONIC RELATIOSHIP and THOSE OVERTONES are NOT potentiated by the box. A THICK STRING is possess STIFFNESS and the it is called a BEAM rather than a STRING. Overtones are quickly ATTENUATED and the FUNDAMENTAL can ring for a long time.
+
+
+	</aside>
+</section>
+
+
+
+
+
+
+
+
+			<section>
+
+
+				<h4>String Instruments: <span style="color:#3a84b8;">VIBRATION PATTERNS</span></h4>
+1- Modes <span style="color:#3a84b8;">inside the cavity</span>: $A_0$, $A_1$, $A_2$,...
+				<img class="stretch" src="assets/Modes_Air_cavity.png" />
+
+				<aside class="notes">
+				What it is a mode?<br>
+				A mode is a VIBRATION PATTERN happening at a CERTAIN Frequency.
+				<br>
+				The dash line is what we call the NODES coinciding with the POINTS where there is NO MOVEMENT at all.<br>
+				<br>
+				For instance, When the VIOLIN is EXCITED at 284Hz, we have the (0,0) mode (some times also refered as Helmholtz resonance) and what we can see from the plot is that the AIR is MOVING ALL EQUALIY.<br>
+				<br>
+				For (0,1) mode, it is called the LONGITUDINAL mode and you may imagine the air molecules drawing a WAVE up and down on the LONGITUDINAL direction so that the CENTER of the VIOLIN is NOT moving.<br>
+				<br>
+				For (1,0) mode, is the TRANSVERSE mode and the wave is UP and DOWN but now having in the TRASNVERSE direction.
+				<br> Observation: the f-holes are SYMMETRIC! and thus, the sound will radiate in THIS CASE is OPPOSITE polarity. The sound contribution at 1077Hz might be very WEAK!!
+				</aside>
+			</section>
+
+
+			<section>
+
+
+
+<h4>String Instruments: <span style="color:#3a84b8;">VIBRATION PATTERNS</span></h4>
+2- Modes of the <span style="color:#3a84b8;"> back and top plates</span>:
+<img class="stretch" src="assets/ViolinModes.png" />
+
+<aside class="notes">
+- A: Air Modes: Motion of ENCLOSED AIR<br>
+- T: Top modes: PRIMARILY of TOP plate<br>
+- C: BODY modes: modes in which TOP&BACK plates move similarly <br>
+<br>
+1- C1: Similar to 1st BENDING of the mode of a BAR (1 NODAL line NEAR the Bridge)<br>
+Does NOT radiate sounds very efficiently but probably contributed to the "FEEL" of the instrument + COUPLE other modes having NEAR same freq.!<br>
+<br>
+2- A0: LOWEST mode of acoustical importance <br>
+MAIN air RESONANCE or f-HOLE RESONANCE in which a substantial amount of air moves IN and OUT of the f-HOLES<br>
+<br>
+3- C2, C3, C4 are quite SIMILAR in shape to 3 modes in a FREE TOP Plate<br>
+<br>
+Notes: TOP and BACK plates are STRONGLY coupled by the SOUNDPOST as well as the RIBS<br>
+--> FEW modes move on the same DIRECTION<br>
+<br>
+
+
+
+
+
+</aside>
+</section>
+
+
+
+<section>
+
+<h4>String Instruments: <span style="color:#3a84b8;">ADMITTANCE</span></h4>
+ <span style="color:#3a84b8;"> Input admittance</span>: vibration velocity when excitation force is constant at each frequency
+<img class="stretch" src="assets/AdmittanceViolin.png" />
+
+<aside class="notes">
+	- When the admittance is HIGH it means that htere is a vibration amplitude high at that freq. --> EACH peak corresponds to one vibration pattern.<br>
+	- The admittance is measured at one point, in this case on the bass bar side. <br>
+	Violin Quality:<br>
+	1- UNIFORMLY high levels of T1, C3, and C4<br>
+	2- Rapid INCREASE in ADMITTANCE from 1.4 to 3 kHz<br>
+
+
+
+</aside>
+</section>
+
+<section>
+
+<h4>String Instruments: <span style="color:#3a84b8;">ADMITTANCE</span></h4>
+Input admittance</span> at 2 different points:  <br><span style="color:#3a84b8;"> Bass Bar & Soundpost</span><br>
+<img class="stretch" src="assets/Admittance2points.png" />
+
+<aside class="notes">
+At 2 DIFFERENT POINTS!
+now, what is the relationship between the vibrations and the Sound Pressure Level??
+
+</aside>
+</section>
+
+<section>
+
+<h4>String Instruments: <span style="color:#3a84b8;">ADMITTANCE and SPL</span></h4>
+ What is the relationship between the <span style="color:#3a84b8;"> Sound Pressure Level (SPL)</span> and <span style="color:#3a84b8;"> Input Admittance</span>
+<img class="stretch" src="assets/SPL_Admittance.png" />
+
+<aside class="notes">
+The SPL measurement have been averaged out the resonances of the room, so just the violin ones are highligthed. <br>
+1- SPL are SIMILAR curves, have the same PEAKS. So it is analogous to talk about SPL and VIBRATIONS! <br>
+2- For A0 (around 300 Hz), the SPL is even MORE prominent than the Admittance, so it is actually boosted by the f-holes from the cavity!<br>
+3- IMPORTANT body RESONANCES in the 2-3kHz range form a sort of "VIOLIN FORMANT" called "BRIDGE HILL" for some authors. (analogous to singr's formant, a collection of resonances of the vocal tract that allows the opera singer to be HEARD over a loud orchestra)
+
+</aside>
+</section>
+
+<section>
+
+<h4>String Instruments: <span style="color:#3a84b8;"><br>GENERATION & AMPLIFICATION</span></h4>
+
+<img class="stretch" width="150%" src="assets/GeneralMusicInstrument.jpeg" />
+
+<aside class="notes">
+</aside>
+</section>
+
+
+
+
+
+<section>
+
+<h4>String Instruments: <span style="color:#3a84b8;">RADIATION of sound</span></h4>
+
+
+Main direction of radiation in the horizontal plane [Meyer, 1972]
+<div class="twocolumn">
+					<div>
+						<ul>
+
+							<li><span style="color:#3a84b8;">Lower tones</span>: Omnidirectional</li>
+							<li><span style="color:#3a84b8;">	1-1.5kHz</span>: directional, Forward</li>
+							<li><span style="color:#3a84b8;">	High tones</span>: wider radiation</li>
+						</ul>
+</div>
+	<div>
+<img class="stretch" width="75%" src="assets/RadiationViolin.png" />
+
+</div>
+</div>
+
+<aside class="notes">
+
+It is a quite RELEVANT information to know about the musical instruments when, for instance, one wished to:<br>
+- do recording and needs to place microphones so that the recording is well balanced<br>
+- place microphones for a sound reinforcement system in a concert hall<br>
+- position of the differnt instruments in an orchestra --> it can give very different EFFECTS
+
+
+</aside>
+</section>
+
+
+
+<section>
+
+<h4>String Instruments: <span style="color:#3a84b8;">RADIATION of sound</span></h4>
+<span style="color:#3a84b8;"> Arrangement of violins </span> of a Symphony Orchestra:
+
+<div class="twocolumn">
+					<div>
+<img class="stretch" src="assets/Phylamonica_Vienna.jpeg" />
+American Placement<br> (both left)
+</div>
+	<div>
+<img class="stretch" src="assets/CVDBrahms1sm.jpeg" />
+German Placement<br> (left-right)
+</div>
+</div>
+
+
+<aside class="notes">
+ASYMMETRY: unbalanced TONE COLOR behind violins!<br>
+
+</aside>
+</section>
+
+
+
+
+<section>
+
+<h4>String Instruments: <span style="color:#3a84b8;">RADIATION of sound</span></h4>
+
+
+The <span style="color:#3a84b8;">cello</span> is not a scaled-version of the violin!<br>
+<div class="twocolumn">
+					<div>
+						<ul>
+
+							<li><span style="color:#3a84b8;">Lower tones</span>: Omnidirectional</li>
+							<li><span style="color:#3a84b8;">	1-1.5kHz</span>: directional, Forward</li>
+							<li><span style="color:#3a84b8;">	High tones</span>: wider radiation</li>
+						</ul>
+</div>
+	<div>
+<img class="stretch" width="120%" src="assets/RadiationCello.png" />
+
+</div>
+</div>
+
+<aside class="notes">
+- First, STANDING UPRIGTH when playing! <br>
+- At 200Hz, already DIRECTIONAL<br>
+- At 250 Hz, BACKWARDS!<br>
+Also, this directivy DRASTICALLY CHANGING as a function of frequency MAY CREATE THE ILLUSION that EACH NOTE is coming from a DIFFERENT DIRECTION.<br>
+This effect is actually ENHANCED by the CONSTANT CHANGING of ORIENTATION of the player and by the use of VIBRATO, which constantly varies the FREQ.<br>
+This effect is very DIFFICULT to PRODUCE a realistic VIOLIN SOUND with a SINGLE ORDINARY LOUDSPEAKER.
+</aside>
+</section>
+
+
+<section>
+
+<h4>String Instruments: <span style="color:#3a84b8;"><br>analysis of sound</span></h4>
+<span style="color:#3a84b8;">5 Different Microphones</span> vs <span style="color:#3a84b8;">Reverberation Room</span>
+<img class="stretch" width="150%" src="assets/SPL_differentPOs_REVERB.png" />
+
+<aside class="notes">
+	- Different DIRECTIONS, different STRONG and WEAK freq. (10-15dB) <br>
+	- There is NO DIRECTION which gives ALL FREQ. STRONGEST radiation!<br>
+	- In a REVERBERANT space, there is NO MUCh different from POSITION to POSITION! So, we we are listenim at a LONG DISTANCE, in a concert hall, we will get quite a "STABLE SPECTRUM".<br>
+	- Again, the bigest challenge is to find the microphone position at the NEAR FIELD which gives spectral BALANCE similar to what it is heard in the reverberant field.
+
+</aside>
+</section>
+
+
+
+
+
+
+
+
+		</div>
+	</div>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			math: {
+				mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+				config: 'TeX-AMS_HTML-full' // See http://docs.mathjax.org/en/latest/config-files.html
+			},
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/math/math.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true,
+					callback: function() {
+						hljs.initHighlightingOnLoad();
+					}
+				}
+			]
+		});
+	</script>
+
+
+
+	<!-- 2. Create hidden header/footer <div> -->
+	<div id="hidden" style="display:none;">
+		<div id="header">
+			<!--
+                <div id="header-left">HEADER-LEFT</div>
+                <div id="header-right">HEADER-RIGHT</div>
+                -->
+			<div id="footer-left"> <SMALL> sara.martin@ntnu.no </SMALL> </div>
+		</div>
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+	<script type="text/javascript">
+		// 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+		var header = $('#header').html();
+		if (window.location.search.match(/print-pdf/gi)) {
+			Reveal.addEventListener('ready', function(event) {
+				$('.slide-background').append(header);
+			});
+		} else {
+			$('div.reveal').append(header);
+		}
+	</script>
+
+</body>
+
+</html>
